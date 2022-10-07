@@ -5,8 +5,15 @@ import ListaNoticia from "./ListaNoticia";
 const Formulario = () => {
    
 
-
-  
+    const consultarApi = async()=>{
+        try {
+            const respuesta = await fetch("");
+            const dato = await respuesta.json()
+        } catch (error) {
+            
+        }
+    }
+    
 
 
   return (
