@@ -4,15 +4,14 @@ import { Col ,Card,Button} from "react-bootstrap";
 const Noticia = ({item}) => {
   return (
     <Col md={4}>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+      <Card>
+        <Card.Img variant="top" src={item.urlToImage} />
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {item.description}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Ver mas</Button>
         </Card.Body>
       </Card>
     </Col>

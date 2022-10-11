@@ -18,7 +18,7 @@ const Formulario = () => {
    
   useEffect(() => {
     consultarApi();
-  },[select]);
+  },[select,pais]);
 
 
   if(select === "Deportes"){
@@ -34,8 +34,8 @@ const Formulario = () => {
       paises = "ar"
   }else if(pais === "USA"){
      paises = "us"
-  }else if(pais === "España"){
-    paises = "es"
+  }else if(pais === "Inglaterra"){
+    paises = "gb"
   }
 
   const consultarApi = async () => {
@@ -57,7 +57,7 @@ const Formulario = () => {
     <div className="mt-5">
       <Form>
         <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
-          <Form.Label className="me-4 mt-2">Selcciona una categoria</Form.Label>
+          <Form.Label className="me-4 mt-2">Selecciona una categoria</Form.Label>
           <Form.Select
             aria-label="Default select example"
             className="w-50"
@@ -71,11 +71,12 @@ const Formulario = () => {
           <Form.Select 
           aria-label="Default select example"
            className="w-50"
-            onChange={(e)=>setPais(e.target.value)}>
+            onChange={(e)=>setPais(e.target.value)}
+            value={pais}>
             <option>Selecciona un pais</option>
             <option value="Argentina">Argentina</option>
             <option value="USA">Estados Unidos</option>
-            <option value="España">España</option>
+            <option value="Inglaterra">Inglaterra</option>
           </Form.Select>
         </Form.Group>
       </Form>
